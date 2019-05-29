@@ -1,0 +1,56 @@
+{
+	"variables": [],
+	"info": {
+		"name": "2. アクセス トークンの取得",
+		"_postman_id": "dc48a169-7fb2-a8d0-b0db-eeaf2d4745fb",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticate",
+			"request": {
+				"url": "https://developer.api.autodesk.com/authentication/v1/authenticate",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "<Your Consumer Key>",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "client_secret",
+							"value": "<Your Consumer Secret>",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "scope",
+							"value": "bucket:create bucket:read data:read data:write data:create",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,56 @@
+{
+	"variables": [],
+	"info": {
+		"name": " 3. バケットの作成",
+		"_postman_id": "294f74f8-88b6-aff9-8ec2-c0ea0249b8bd",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Creaete a bucket",
+			"request": {
+				"url": "https://developer.api.autodesk.com/oss/v2/buckets",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <Your Access Token>",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bucketKey\": \"<Your Bucket Name>\",\r\n    \"policyKey\": \"<Your Bucket Policy>\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET buckets",
+			"request": {
+				"url": "https://developer.api.autodesk.com/oss/v2/buckets",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <Your Access Token>",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

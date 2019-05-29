@@ -1,0 +1,163 @@
+{
+	"variables": [],
+	"info": {
+		"name": "4. デザイン ファイルのアップロード",
+		"_postman_id": "a87046e5-aa6d-3f1d-2b8b-efbc67772417",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List objects in OSS",
+			"request": {
+				"url": {
+					"raw": "https://developer.api.autodesk.com/oss/v2/buckets/:Your Bucket Name/objects",
+					"protocol": "https",
+					"auth": {},
+					"host": [
+						"developer",
+						"api",
+						"autodesk",
+						"com"
+					],
+					"path": [
+						"oss",
+						"v2",
+						"buckets",
+						":Your Bucket Name",
+						"objects"
+					],
+					"variable": [
+						{
+							"value": "",
+							"id": "Your"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <Your Access Token>",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a file from bucket",
+			"request": {
+				"url": {
+					"raw": "https://developer.api.autodesk.com/oss/v2/buckets/:Your Bucket Name/objects/:Your Design File",
+					"protocol": "https",
+					"auth": {},
+					"host": [
+						"developer",
+						"api",
+						"autodesk",
+						"com"
+					],
+					"path": [
+						"oss",
+						"v2",
+						"buckets",
+						":Your Bucket Name",
+						"objects",
+						":Your Design File"
+					],
+					"variable": [
+						{
+							"value": "",
+							"id": "Your"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <Your Access Token>",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Upload a file to bucket",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "postman.clearGlobalVariable(\"variable_key\");\n\npostman.clearEnvironmentVariable(\"variable_key\");"
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "https://developer.api.autodesk.com/oss/v2/buckets/:Your Bucket Name/objects/:Your Design File",
+					"protocol": "https",
+					"auth": {},
+					"host": [
+						"developer",
+						"api",
+						"autodesk",
+						"com"
+					],
+					"path": [
+						"oss",
+						"v2",
+						"buckets",
+						":Your Bucket Name",
+						"objects",
+						":Your Design File"
+					],
+					"variable": [
+						{
+							"value": "",
+							"id": "Your"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <Your Access Token>",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/octet-stream",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"value": "Bike frame.f3d",
+							"type": "file",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

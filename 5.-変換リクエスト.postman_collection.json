@@ -1,0 +1,172 @@
+{
+	"variables": [],
+	"info": {
+		"name": "5. 変換リクエスト",
+		"_postman_id": "b7e8cdf1-ed46-58b8-e58b-7a06f18cb560",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Convert for viewing",
+			"request": {
+				"url": "https://developer.api.autodesk.com/modelderivative/v2/designdata/job",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <Your Access Token>",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"input\": {\r\n     \"urn\": \"<Your Encoded URN>\"\r\n   },\r\n   \"output\": {\r\n     \"formats\": [\r\n       {\r\n         \"type\": \"svf\",\r\n         \"views\": [\r\n           \"2d\",\r\n           \"3d\"\r\n         ]\r\n       }\r\n     ]\r\n   }\r\n }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get translation status(manifest)",
+			"request": {
+				"url": {
+					"raw": "https://developer.api.autodesk.com/modelderivative/v2/designdata/:URL For Your Design File/manifest",
+					"protocol": "https",
+					"auth": {},
+					"host": [
+						"developer",
+						"api",
+						"autodesk",
+						"com"
+					],
+					"path": [
+						"modelderivative",
+						"v2",
+						"designdata",
+						":URL For Your Design File",
+						"manifest"
+					],
+					"variable": [
+						{
+							"value": "",
+							"id": "URL"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <Your Access Token>",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete manifest",
+			"request": {
+				"url": {
+					"raw": "https://developer.api.autodesk.com/modelderivative/v2/designdata/:URL For Your Design File/manifest",
+					"protocol": "https",
+					"auth": {},
+					"host": [
+						"developer",
+						"api",
+						"autodesk",
+						"com"
+					],
+					"path": [
+						"modelderivative",
+						"v2",
+						"designdata",
+						":URL For Your Design File",
+						"manifest"
+					],
+					"variable": [
+						{
+							"value": "",
+							"id": "URL"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <Your Access Token>",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get supported format",
+			"request": {
+				"url": "https://developer.api.autodesk.com/modelderivative/v2/designdata/formats",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer <Your Access Token>",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "nqpwqsDLFGkSO6LgA2mvaSXy5AeH5VSJ",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "client_secret",
+							"value": "YCh4SpF0REGg4awz",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "scope",
+							"value": "bucket:create bucket:read data:read data:write",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
